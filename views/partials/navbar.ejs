@@ -1,15 +1,19 @@
-<nav>
+  <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Sun Flower</a>
+      <a href="#" class="brand-logo">Sun Flower Organic Store</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/">Home</a></li>
-        <% if(currentUser){%>
-          <li><a href="/profile">Profile</a></li>
+         <li><a href="/fruit">Shopping</a></li>
+        <% if(currentUser) {%>
+        <li><a href="/fruit/new">Manage</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/cart">Cart</a></li>
           <li><a href="/auth/logout">Logout</a></li>
-        <%} else {%>
-          <li><a href="/auth/login">Login</a></li>
-          <li><a href="/auth/signup">Signup</a></li>
+          <%} else {%>
+           <li><a href="/auth/login">Login</a></li>
+        <li><a href="/auth/signup">Signup</a></li>
         <%}%>
       </ul>
     </div>
   </nav>
+        
