@@ -1,1 +1,35 @@
-index.ejs
+
+<% fruit.forEach(function(m){%>
+	<div>
+		<h4>
+			<%=m.name%>
+		</h4>
+		<img src="<%= m.image%>"><br>
+		Price: $<%=m.price%>/lb <br>
+		<input type="button" class="cart" value="Add to Cart"><br>
+		<a class="delete-btn" href="/fruits/<%=m.id%>">Delete</a>
+		<hr>
+	</div>
+<%});%>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	$('.delete-btn').click(function(e){
+	e.preventDefault();
+	var url = $(this).attr('href');
+ 	$.ajax({
+		method: "DELETE",
+		url: url
+	}).done(function(data){
+		// console.log('message:', data);
+		window.location = '/fruits';
+	}).fail(function(err){
+		console.log('error message:', err);
+	});
+});
+});
+
+
+</script> 
