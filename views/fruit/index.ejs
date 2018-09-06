@@ -5,31 +5,11 @@
 			<%=m.name%>
 		</h4>
 		<img src="<%= m.image%>"><br>
+
 		Price: $<%=m.price%>/lb <br>
-		<input type="button" class="cart" value="Add to Cart"><br>
-		<a class="delete-btn" href="/fruit/<%=m.id%>">Delete</a>
+		<input type="button" data-name="<%=m.name%>" data-price="<%=m.price %>" class="cart" value="Add to Cart"><br>
+		<a class="delete-btn"  href="/fruit/<%=m.id%>">Delete</a>
 		<hr>
 	</div>
 <%});%>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-
-$(document).ready(function(){
-	$('.delete-btn').click(function(e){
-	e.preventDefault();
-	var url = $(this).attr('href');
- 	$.ajax({
-		method: "DELETE",
-		url: url
-	}).done(function(data){
-		// console.log('message:', data);
-		window.location = '/fruit';
-	}).fail(function(err){
-		console.log('error message:', err);
-	});
-});
-});
-
-
-</script> 

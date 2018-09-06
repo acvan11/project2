@@ -50,6 +50,9 @@ app.use('/profile', require('./controllers/profile'));
 app.use('/fruit', require('./controllers/fruit'));
 app.use('/cart', require('./controllers/cart'));
 
+//
+app.use(express.static('public'));
+
 // Define routes
 app.get('/', function(req, res){
   res.render('home');
