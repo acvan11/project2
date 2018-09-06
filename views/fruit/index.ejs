@@ -7,7 +7,7 @@
 		<img src="<%= m.image%>"><br>
 		Price: $<%=m.price%>/lb <br>
 		<input type="button" class="cart" value="Add to Cart"><br>
-		<a class="delete-btn" href="/fruits/<%=m.id%>">Delete</a>
+		<a class="delete-btn" href="/fruit/<%=m.id%>">Delete</a>
 		<hr>
 	</div>
 <%});%>
@@ -24,7 +24,7 @@ $(document).ready(function(){
 		url: url
 	}).done(function(data){
 		// console.log('message:', data);
-		window.location = '/fruits';
+		window.location = '/fruit';
 	}).fail(function(err){
 		console.log('error message:', err);
 	});
