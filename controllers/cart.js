@@ -23,4 +23,17 @@ router.post('/', function(req, res){
 		res.render('404');
 	});
 });
+
+
+
+router.delete('/:id', function(req, res){
+	db.cart2.destroy({
+		where: {id: req.params.id}
+	}).then(function(recentproduct){
+		res.send('sucessfully deleted!');
+	}).catch(function(e){
+		res.send('sad fail');
+	});
+});
+
 module.exports = router;

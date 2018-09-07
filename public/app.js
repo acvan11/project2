@@ -15,6 +15,20 @@ $(document).ready(function(){
 		});
 	});
 
+	$('.delete-product').click(function(e){
+		e.preventDefault();
+		var url = $(this).attr('href');
+	 	$.ajax({
+			method: "DELETE",
+			url: url
+		}).done(function(data){
+			// console.log('message:', data);
+			window.location = '/cart';
+		}).fail(function(err){
+			console.log('error message:', err);
+		});
+	});
+
 
 	$('.cart').click(function(e){
 		e.preventDefault();

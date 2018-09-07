@@ -37,7 +37,7 @@ router.get('/:id', function(req, res){
 router.delete('/:id', function(req, res){
 	db.fruit.destroy({
 		where: {id: req.params.id}
-	}).then(function(recentmovie){
+	}).then(function(recentfruit){
 		res.send('sucessfully deleted!');
 	}).catch(function(e){
 		res.send('sad fail');
