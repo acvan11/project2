@@ -24,8 +24,13 @@ router.post('/', function(req, res){
 	});
 });
 
+router.get('/payment', function(req,res){
+	res.render('cart/payment');
+});
 
-
+router.get('/finish', function(req,res){
+	res.render('cart/finish');
+})
 router.delete('/:id', function(req, res){
 	db.cart2.destroy({
 		where: {id: req.params.id}

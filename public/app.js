@@ -15,19 +15,21 @@ $(document).ready(function(){
 		});
 	});
 
-	  $('.update').submit(function(e){
-   	 e.preventDefault();
+ $('#updateform').submit(function(e){
+   	e.preventDefault();
     console.log('about to submit a PUT req');
-	
+	let name = this.getAttribute('updatename');
+	let price = this.getAttribute('updateprice');
+	let image = this.getAttribute('updateimage');
        $.ajax({
-      url: $(this).attr(href),
+      url: $(this).attr(action),
       method: 'PUT',
-      data: $(this).serialize()
+      data: {name: name, price: price, image:image}
     }).done(function(res){
       console.log('success', res);
     }).fail(function(err){
       console.log('error', err);
-    });
+   });
   });
 
 	$('.delete-product').click(function(e){
