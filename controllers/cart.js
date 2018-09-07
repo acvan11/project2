@@ -12,7 +12,10 @@ router.get('/', function(req, res){
 
 router.post('/', function(req, res){
 	//todo: want to post data name fruit and price
-	console.log(req.body);
-	res.send('success');
+	db.cart2.create(req.body).then(function (checkout){
+		res.send('success');
+	}).catch(function(err){
+		res.render('404');
+	});
 });
 module.exports = router;
