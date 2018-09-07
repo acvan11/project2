@@ -1,6 +1,6 @@
 <h2>Check out!</h2>
 
-
+<% var total = 0%>
 <% cart2.forEach(function(m){%>
 	<div>
 		<h4>
@@ -8,9 +8,10 @@
 		</h4>
 
 		Price: $<%=m.price%> <br>
-		
-		
+		<%total += m.price%>
+		<a class="delete-product"  href="/cart/<%=m.id%>">Delete</a>
 		<hr>
 	</div>
 <%});%>
-<h3>Total: </h3>
+<h3>Total: $<%=total%></h3>
+<input value="Check Out" type="button">
