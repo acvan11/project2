@@ -5,9 +5,14 @@ var express = require('express');
 var db = require('../models');
 var router = express.Router();
 
-// Define routes 
 router.get('/', function(req, res){
-	res.render('cart/index');
+		db.cart2.findAll().then(function(f){
+			// console.log(f);
+		//	res.render('cart/index')
+		 res.render('cart/index', {cart2: f});
+	}).catch(function(err){
+		res.render('404');
+	});
 });
 
 router.post('/', function(req, res){

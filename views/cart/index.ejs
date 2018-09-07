@@ -1,2 +1,16 @@
 <h2>Check out!</h2>
 
+
+<% cart2.forEach(function(m){%>
+	<div>
+		<h4>
+			<%=m.name%>
+		</h4>
+
+		Price: $<%=m.price%> <br>
+		
+		
+		<hr>
+	</div>
+<%});%>
+<h3>Total: </h3>
