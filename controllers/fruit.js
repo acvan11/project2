@@ -33,6 +33,9 @@ router.get('/:id', function(req, res){
 		res.render('404');
 	});
 });
+router.put('/:id', function(req, res){
+  res.send(req.body);
+});
 
 router.delete('/:id', function(req, res){
 	db.fruit.destroy({

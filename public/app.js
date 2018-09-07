@@ -15,6 +15,21 @@ $(document).ready(function(){
 		});
 	});
 
+	  $('.update').submit(function(e){
+   	 e.preventDefault();
+    console.log('about to submit a PUT req');
+
+       $.ajax({
+      url: $(this).attr('action'),
+      method: 'PUT',
+      data: $(this).serialize()
+    }).done(function(res){
+      console.log('success', res);
+    }).fail(function(err){
+      console.log('error', err);
+    });
+  });
+
 	$('.delete-product').click(function(e){
 		e.preventDefault();
 		var url = $(this).attr('href');
@@ -28,6 +43,7 @@ $(document).ready(function(){
 			console.log('error message:', err);
 		});
 	});
+
 
 
 	$('.cart').click(function(e){
