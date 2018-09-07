@@ -18,10 +18,7 @@ $(document).ready(function(){
  $('#updateform').submit(function(e){
    	e.preventDefault();
    	var url = $(this).attr('action');
-    console.log('about to submit a PUT req');
-	// let name = this.getAttribute('nameUpdate');
-	// let price = this.getAttribute('priceUpdate');
-	// let image = this.getAttribute('imageUpdate');
+    console.log('about to submit a PUT req', url );
 	
        $.ajax({
       url: url,

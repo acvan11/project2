@@ -38,11 +38,13 @@ router.get('/:id', function(req, res){
 	});
 });
 
-router.get('/update', function(req, res){
-	res.render('fruit/update');
-});
+// router.get('/update', function(req, res){
+// 	res.render('fruit/update');
+// });
 router.get('/update/:id', function(req, res){
+	console.log(req.params.id);
 	db.fruit.findById(req.params.id).then(function(m){
+	console.log(m);
 			res.render('fruit/update', {fruit: m});
 	}).catch(function(err){
 		res.render('404');
