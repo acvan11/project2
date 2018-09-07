@@ -33,7 +33,12 @@ router.get('/:id', function(req, res){
 		res.render('404');
 	});
 });
-router.put('/update', function(req, res){
+
+router.get('/update', function(req, res){
+	res.render('fruit/update');
+});
+
+router.put('/fruitupdate', function(req, res){
   res.send(req.body);
 });
 
