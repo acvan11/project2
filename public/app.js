@@ -19,13 +19,15 @@ $(document).ready(function(){
    	e.preventDefault();
    	var url = $(this).attr('action');
     console.log('about to submit a PUT req');
-	let name = this.getAttribute('updatename');
-	let price = this.getAttribute('updateprice');
-	let image = this.getAttribute('updateimage');
+	// let name = this.getAttribute('nameUpdate');
+	// let price = this.getAttribute('priceUpdate');
+	// let image = this.getAttribute('imageUpdate');
+	
        $.ajax({
       url: url,
       method: 'PUT',
-      data: {name: name, price: price, image:image}
+     // data: {name: name, price: price, image:image}
+    	data: $(this).serialize()
     }).done(function(res){
       console.log('success', res);
     }).fail(function(err){

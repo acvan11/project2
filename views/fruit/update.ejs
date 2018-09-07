@@ -1,8 +1,8 @@
 <h2>Update picture/name/price of fruit to the store</h2>
 
-<form id='updateform' method="PUT" action="fruitupdate">
-	Fruit: <input type="text" name="nameUpdate" required> 
-	Price for 1 lb: <input type="integer" name="priceUpdate" required> Dollars<br>
-	Image: <input type="url" name="imageUpdate" required>
-	<input type="submit" value="Add Fruit">
+<form id="updateform" action='/fruit/update'>
+	Fruit: <input type="text" name="name" required> 
+	Price for 1 lb: <input type="integer" name="price" required> Dollars<br>
+	Image: <input type="url" name="image" required>
+	<input type="submit"  value="Update Fruit">
 </form>

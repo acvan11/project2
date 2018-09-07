@@ -49,8 +49,18 @@ router.get('/update/:id', function(req, res){
 	});
 });
 
-router.put('/fruitupdate', function(req, res){
-  res.send(req.body);
+router.put('/update', function(req, res){
+	console.log('try to listen from controllers');
+  	db.fruit.findOne({
+  		where: {name: req.body.name}
+  	}).then(function(m){
+	console.log(m);  
+  	console.log(req.body);
+  	m.update(req.body);
+  }).catch(function(err){
+  	console.log(err);
+  	res.render('404');
+  })
 });
 
 router.delete('/:id', function(req, res){
