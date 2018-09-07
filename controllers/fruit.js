@@ -26,6 +26,10 @@ router.post('/', function(req, res){
 	});
 });
 
+router.get('/update', function(req, res){
+	res.render('fruit/update');
+});
+
 router.get('/:id', function(req, res){
 	db.fruit.findById(req.params.id).then(function(m){
 			res.send(m);
@@ -36,6 +40,13 @@ router.get('/:id', function(req, res){
 
 router.get('/update', function(req, res){
 	res.render('fruit/update');
+});
+router.get('/update/:id', function(req, res){
+	db.fruit.findById(req.params.id).then(function(m){
+			res.render('fruit/update', {fruit: m});
+	}).catch(function(err){
+		res.render('404');
+	});
 });
 
 router.put('/fruitupdate', function(req, res){

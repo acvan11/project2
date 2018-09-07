@@ -18,9 +18,9 @@ $(document).ready(function(){
 	  $('.update').submit(function(e){
    	 e.preventDefault();
     console.log('about to submit a PUT req');
-var url = "/fruit/update";
+	
        $.ajax({
-      url: $(this).attr('action'),
+      url: $(this).attr(href),
       method: 'PUT',
       data: $(this).serialize()
     }).done(function(res){
