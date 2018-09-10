@@ -27,6 +27,7 @@ $(document).ready(function(){
     	data: $(this).serialize()
     }).done(function(res){
       console.log('success', res);
+      window.location= '/fruit';
     }).fail(function(err){
       console.log('error', err);
    });

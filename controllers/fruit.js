@@ -51,14 +51,15 @@ router.get('/update/:id', function(req, res){
 	});
 });
 
-router.put('/update', function(req, res){
+router.put('/update/:id', function(req, res){
 	console.log('try to listen from controllers');
   	db.fruit.findOne({
-  		where: {name: req.body.name}
+  		where: {id: req.params.id}
   	}).then(function(m){
 	console.log(m);  
   	console.log(req.body);
   	m.update(req.body);
+  	res.send('success');
   }).catch(function(err){
   	console.log(err);
   	res.render('404');
