@@ -10,10 +10,11 @@
 		
 		<input type="button" data-name="<%=m.name%>" data-price="<%=m.price %>" 
 		class="cart" value="Add to Cart"><br>
-
+		<% if (currentUser.admin) {%>
 		<a class="delete-btn"  href="/fruit/<%=m.id%>">Delete</a><br>
 
-		<a class="update" id="updateform"  href="/fruit/update/<%=m.id%>" updatename="<%=m.name%>" updateprice="<%=m.price %>" updateimage="<%=m.image %>">Edit</a>
+		<a class="update"  href="/fruit/update/<%=m.id%>" updatename="<%=m.name%>" updateprice="<%=m.price %>" updateimage="<%=m.image %>">Edit</a>
+		<% } %>
 		<hr>
 	</div>
 <%});%>

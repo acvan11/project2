@@ -5,11 +5,13 @@
         <li><a href="/">Home</a></li>
          <li><a href="/fruit">Shopping</a></li>
         <% if(currentUser) {%>
-        <li><a href="/fruit/new">Add Product</a></li>
-        <li><a href="/profile">Profile</a></li>
-        <li><a href="/cart">Cart</a></li>
+          <% if(currentUser.admin) {%>
+            <li><a href="/fruit/new">Add Product</a></li>
+          <% } %>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/cart">Cart</a></li>
           <li><a href="/auth/logout">Logout</a></li>
-          <%} else {%>
+        <%} else {%>
            <li><a href="/auth/login">Login</a></li>
         <li><a href="/auth/signup">Signup</a></li>
         <%}%>

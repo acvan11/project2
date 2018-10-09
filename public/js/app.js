@@ -15,6 +15,8 @@ $(document).ready(function(){
 		});
 	});
 
+
+
  $('#updateform').submit(function(e){
    	e.preventDefault();
    	var url = $(this).attr('action');
@@ -30,6 +32,7 @@ $(document).ready(function(){
       window.location= '/fruit';
     }).fail(function(err){
       console.log('error', err);
+   
    });
   });
 
