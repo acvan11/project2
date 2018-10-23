@@ -1,11 +1,17 @@
 <h2>Create new fruit to the store</h2>
 
 <form method="POST" action="/fruit">
-	<label for="fruit">Fruit</label>
-	<input type="text" name="name" required> 
-	<label for="price">Price for 1 lb: $</label>
-	<input type="integer" name="price" required><br>
-	<label for="image">Image</label>
-	<input type="url" name="image" required>
+	<div class="form-group">
+		<label for="fruit">Fruit</label>
+		<input type="text" name="name" required>
+	</div>
+	<div class="form-group"> 
+		<label for="price">Price for 1 lb: $</label>
+		<input type="integer" name="price" required><br>
+	</div>
+	<div class="form-group">
+		<label for="image">Image</label>
+		<input type="url" name="image" required>
+	</div>
 	<input type="submit" value="Add Fruit">
 </form>
